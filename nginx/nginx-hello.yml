@@ -36,7 +36,7 @@ spec:
               path: nginx.conf
       - name: nginx-content
         configMap:
-          name: nginx-cont
+          name: nginx-content
           items:
             - key: index.html
               path: index.html
