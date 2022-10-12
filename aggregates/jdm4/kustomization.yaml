@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - ../../manifests/nginx/overlays/jdm4
+  - ../../manifests/cluster-version/overlays/jdm4
