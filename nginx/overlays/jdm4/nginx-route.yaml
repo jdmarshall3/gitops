@@ -1,0 +1,15 @@
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: nginx
+  namespace: nginx-hello
+spec:
+  host: nginx-nginx-hello.apps.ocpdev.jdm4.com
+  to:
+    kind: Service
+    name: nginx-hello
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None

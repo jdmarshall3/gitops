@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-hello
+  namespace: nginx-hello
+spec:
+  selector:
+    matchLabels:
+      app: nginx-hello
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx-hello
+    spec:
+      containers:
+      - name: nginx
+        image: nginxinc/nginx-unprivileged:stable-alpine
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+            - name: nginx-conf
+              mountPath: /usr/share/nginx/html/nginx.conf
+              subPath: nginx.conf
+              readOnly: true
+            - name: nginx-content
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+              readOnly: true
+      volumes:
+      - name: nginx-conf
+        configMap:
+          name: nginx-conf
+          items:
+            - key: nginx.conf
+              path: nginx.conf
+      - name: nginx-content
+        configMap:
+          name: nginx-content
+          items:
+            - key: index.html
+              path: index.html

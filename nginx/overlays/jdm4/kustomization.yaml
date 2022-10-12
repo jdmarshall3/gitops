@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+base:
+  - ../../base
+
+resources:
+  - nginx-route.yaml
+  - nginx-content-cm.yaml
