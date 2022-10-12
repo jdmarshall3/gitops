@@ -7,4 +7,4 @@ spec:
   clusterID: cf23b116-dafc-4fc8-873b-1b33fc7e6c90
 status:
   desired:
-    version: 4.10.24
+    version: 4.10.35
