@@ -2,4 +2,13 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.5/controller.yaml
+  - sealed-secrets-clusterrole.yaml
+  - sealed-secrets-clusterrolebinding.yaml
+  - sealed-secrets-crd.yaml
+  - sealed-secrets-deployment.yaml
+  - sealed-secrets-role-admin.yaml
+  - sealed-secrets-role-proxier.yaml
+  - sealed-secrets-rolebinding-admin.yaml
+  - sealed-secrets-rolebinding-proxier.yaml
+  - sealed-secrets-sa.yaml
+  - sealed-secrets-service.yaml
