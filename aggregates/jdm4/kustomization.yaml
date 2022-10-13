@@ -3,7 +3,6 @@ kind: Kustomization
 
 resources:
   - ../../manifests/nginx/overlays/jdm4
-#  - ../../manifests/cluster-version/overlays/jdm4
   - ../../manifests/elasticsearch-operator/overlays/stable-5.5
   - ../../manifests/sealed-secrets-operator/overlays/jdm4
   - ../../manifests/cert-manager-operator/operator/base
